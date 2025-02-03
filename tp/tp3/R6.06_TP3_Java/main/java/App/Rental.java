@@ -1,3 +1,4 @@
+package main.java.App;
 class Rental {
   private Movie movie;
   private int daysRented;
