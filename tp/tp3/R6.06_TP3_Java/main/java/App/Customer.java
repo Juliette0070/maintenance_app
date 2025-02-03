@@ -2,7 +2,7 @@ package main.java.App;
 import java.util.ArrayList;
 import java.util.List;
 
-class Customer {
+public class Customer {
   private String name;
   private List<Rental> rentals = new ArrayList<>();
 
