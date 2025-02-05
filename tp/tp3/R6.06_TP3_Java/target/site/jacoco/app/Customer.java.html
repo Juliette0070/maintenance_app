@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Customer.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">R6.06_TP3_Java</a> &gt; <a href="index.source.html" class="el_package">app</a> &gt; <span class="el_source">Customer.java</span></div><h1>Customer.java</h1><pre class="source lang-java linenums">package app;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Customer {
+  private String name;
+<span class="fc" id="L8">  private List&lt;Rental&gt; rentals = new ArrayList&lt;&gt;();</span>
+
+<span class="fc" id="L10">  public Customer(String name) {</span>
+<span class="fc" id="L11">    this.name = name;</span>
+<span class="fc" id="L12">  }</span>
+
+  public void addRental(Rental arg) {
+    // rentals.addElement(arg);
+<span class="fc" id="L16">    rentals.add(arg);</span>
+<span class="fc" id="L17">  }</span>
+
+  public String getName() {
+<span class="fc" id="L20">    return name;</span>
+  }
+
+  public String statement() {
+<span class="fc" id="L24">    double totalAmount = 0;</span>
+<span class="fc" id="L25">    int frequentRenterPoints = 0;</span>
+<span class="fc" id="L26">    String result=&quot;Rental Record for &quot; + getName()+&quot;\n&quot;;</span>
+<span class="fc bfc" id="L27" title="All 2 branches covered.">    for (Rental rental : rentals) {</span>
+<span class="fc" id="L28">      double thisAmount = 0;</span>
+      // determine amoints for each line
+<span class="fc bfc" id="L30" title="All 4 branches covered.">      switch(rental.getMovie().getPriceCode()) {</span>
+        case Movie.REGULAR :
+<span class="fc" id="L32">              thisAmount +=2;</span>
+<span class="fc bfc" id="L33" title="All 2 branches covered.">              if (rental.getDaysRented()&gt;2)</span>
+<span class="fc" id="L34">                 thisAmount += (rental.getDaysRented() - 2)*1.5;</span>
+<span class="fc" id="L35">              break;</span>
+        case Movie.NEW_RELEASE :
+<span class="fc" id="L37">              thisAmount= rental.getDaysRented() *3;</span>
+<span class="fc" id="L38">              break;</span>
+        case Movie.CHILDRENS :
+<span class="fc" id="L40">              thisAmount +=1.5;</span>
+<span class="fc bfc" id="L41" title="All 2 branches covered.">              if (rental.getDaysRented()&gt;3)</span>
+<span class="fc" id="L42">                 thisAmount += (rental.getDaysRented() - 3)*1.5;</span>
+              break;
+       }
+       // add frequent renter points
+<span class="fc" id="L46">        frequentRenterPoints ++ ;</span>
+       // add bonus for a two day new release rental
+<span class="fc bfc" id="L48" title="All 4 branches covered.">       if ((rental.getMovie().getPriceCode() == Movie.NEW_RELEASE) &amp;&amp; rental.getDaysRented() &gt;1)</span>
+<span class="fc" id="L49">            frequentRenterPoints++ ;</span>
+       // show figures for this rental
+<span class="fc" id="L51">        result +=&quot;\t&quot; + rental.getMovie().getTitle() + &quot;\t&quot; + String.valueOf(thisAmount)+&quot;\n&quot;;</span>
+<span class="fc" id="L52">        totalAmount+= thisAmount;</span>
+    }
+    // add footer lines
+<span class="fc" id="L55">    result +=&quot;Amount owed is&quot;+ String.valueOf(totalAmount) +&quot;\n&quot;;</span>
+<span class="fc" id="L56">    result += &quot;You earned  &quot; + String.valueOf(frequentRenterPoints) + &quot; frequent renter points&quot;;</span>
+<span class="fc" id="L57">    return result;</span>
+  }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>
