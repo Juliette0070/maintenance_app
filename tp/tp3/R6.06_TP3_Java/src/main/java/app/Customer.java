@@ -33,16 +33,16 @@ public class Customer {
 
   private double getTotalCharge() {
     double totalAmount = 0;
-    for (Rental rental : rentals) {
-      totalAmount += rental.getCharge();
+    for (Rental each : rentals) {
+      totalAmount += each.getCharge();
     }
     return totalAmount;
   }
 
   private int getTotalFrequentRenterPoints() {
     int frequentRenterPoints = 0;
-    for (Rental rental : rentals) {
-      frequentRenterPoints = rental.getFrequentRenterPoints(frequentRenterPoints);
+    for (Rental each : rentals) {
+      frequentRenterPoints += each.getFrequentRenterPoints();
     }
     return frequentRenterPoints;
   }

@@ -33,16 +33,16 @@ public class Customer {
 
   private double getTotalCharge() {
 <span class="fc" id="L35">    double totalAmount = 0;</span>
-<span class="fc bfc" id="L36" title="All 2 branches covered.">    for (Rental rental : rentals) {</span>
-<span class="fc" id="L37">      totalAmount += rental.getCharge();</span>
+<span class="fc bfc" id="L36" title="All 2 branches covered.">    for (Rental each : rentals) {</span>
+<span class="fc" id="L37">      totalAmount += each.getCharge();</span>
 <span class="fc" id="L38">    }</span>
 <span class="fc" id="L39">    return totalAmount;</span>
   }
 
   private int getTotalFrequentRenterPoints() {
 <span class="fc" id="L43">    int frequentRenterPoints = 0;</span>
-<span class="fc bfc" id="L44" title="All 2 branches covered.">    for (Rental rental : rentals) {</span>
-<span class="fc" id="L45">      frequentRenterPoints = rental.getFrequentRenterPoints(frequentRenterPoints);</span>
+<span class="fc bfc" id="L44" title="All 2 branches covered.">    for (Rental each : rentals) {</span>
+<span class="fc" id="L45">      frequentRenterPoints += each.getFrequentRenterPoints();</span>
 <span class="fc" id="L46">    }</span>
 <span class="fc" id="L47">    return frequentRenterPoints;</span>
   }
