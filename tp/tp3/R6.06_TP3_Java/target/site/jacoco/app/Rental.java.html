@@ -37,5 +37,14 @@ public class Rental {
     }
 <span class="fc" id="L38">    return result;</span>
   }
+
+  public int getFrequentRenterPoints(int frequentRenterPoints) {
+    // add frequent renter points
+<span class="fc" id="L43">    frequentRenterPoints++;</span>
+    // add bonus for a two day new release rental
+<span class="fc bfc" id="L45" title="All 4 branches covered.">    if ((getMovie().getPriceCode() == Movie.NEW_RELEASE) &amp;&amp; getDaysRented() &gt; 1)</span>
+<span class="fc" id="L46">      frequentRenterPoints++;</span>
+<span class="fc" id="L47">    return frequentRenterPoints;</span>
+  }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>
