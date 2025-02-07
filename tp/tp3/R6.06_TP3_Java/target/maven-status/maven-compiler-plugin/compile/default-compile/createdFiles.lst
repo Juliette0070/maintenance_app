@@ -1,3 +1,3 @@
-app/Customer.class
-app/Movie.class
-app/Rental.class
+app\Rental.class
+app\Customer.class
+app\Movie.class

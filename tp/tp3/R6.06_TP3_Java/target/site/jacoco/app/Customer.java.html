@@ -21,19 +21,30 @@ public class Customer {
   }
 
   public String statement() {
-<span class="fc" id="L24">    double totalAmount = 0;</span>
-<span class="fc" id="L25">    int frequentRenterPoints = 0;</span>
-<span class="fc" id="L26">    String result = &quot;Rental Record for &quot; + getName() + &quot;\n&quot;;</span>
-<span class="fc bfc" id="L27" title="All 2 branches covered.">    for (Rental rental : rentals) {</span>
-<span class="fc" id="L28">      frequentRenterPoints = rental.getFrequentRenterPoints(frequentRenterPoints);</span>
-      // show figures for this rental
-<span class="fc" id="L30">      result += &quot;\t&quot; + rental.getMovie().getTitle() + &quot;\t&quot; + rental.getCharge() + &quot;\n&quot;;</span>
-<span class="fc" id="L31">      totalAmount += rental.getCharge();</span>
-    }
+<span class="fc" id="L24">    String result = &quot;Rental Record for &quot; + getName() + &quot;\n&quot;;</span>
+<span class="fc bfc" id="L25" title="All 2 branches covered.">    for (Rental rental : rentals) {</span>
+<span class="fc" id="L26">      result += &quot;\t&quot; + rental.getMovie().getTitle() + &quot;\t&quot; + rental.getCharge() + &quot;\n&quot;;</span>
+<span class="fc" id="L27">    }</span>
     // add footer lines
-<span class="fc" id="L34">    result += &quot;Amount owed is&quot; + String.valueOf(totalAmount) + &quot;\n&quot;;</span>
-<span class="fc" id="L35">    result += &quot;You earned  &quot; + String.valueOf(frequentRenterPoints) + &quot; frequent renter points&quot;;</span>
-<span class="fc" id="L36">    return result;</span>
+<span class="fc" id="L29">    result += &quot;Amount owed is &quot; + getTotalCharge() + &quot;\n&quot;;</span>
+<span class="fc" id="L30">    result += &quot;You earned &quot; + getTotalFrequentRenterPoints() + &quot; frequent renter points&quot;;</span>
+<span class="fc" id="L31">    return result;</span>
+  }
+
+  private double getTotalCharge() {
+<span class="fc" id="L35">    double totalAmount = 0;</span>
+<span class="fc bfc" id="L36" title="All 2 branches covered.">    for (Rental rental : rentals) {</span>
+<span class="fc" id="L37">      totalAmount += rental.getCharge();</span>
+<span class="fc" id="L38">    }</span>
+<span class="fc" id="L39">    return totalAmount;</span>
+  }
+
+  private int getTotalFrequentRenterPoints() {
+<span class="fc" id="L43">    int frequentRenterPoints = 0;</span>
+<span class="fc bfc" id="L44" title="All 2 branches covered.">    for (Rental rental : rentals) {</span>
+<span class="fc" id="L45">      frequentRenterPoints = rental.getFrequentRenterPoints(frequentRenterPoints);</span>
+<span class="fc" id="L46">    }</span>
+<span class="fc" id="L47">    return frequentRenterPoints;</span>
   }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

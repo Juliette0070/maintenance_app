@@ -15,8 +15,8 @@ class CustomerTest {
         String expectedStatement =
                 "Rental Record for Juliette\n" +
                 "\tTitanic\t3.5\n" +
-                "Amount owed is3.5\n" +
-                "You earned  1 frequent renter points";
+                "Amount owed is 3.5\n" +
+                "You earned 1 frequent renter points";
 
         assertEquals(expectedStatement, customer.statement());
     }
@@ -31,8 +31,8 @@ class CustomerTest {
         String expectedStatement =
                 "Rental Record for Alice\n" +
                 "\tAvengers\t6.0\n" +
-                "Amount owed is6.0\n" +
-                "You earned  2 frequent renter points";
+                "Amount owed is 6.0\n" +
+                "You earned 2 frequent renter points";
 
         assertEquals(expectedStatement, customer.statement());
     }
@@ -47,8 +47,8 @@ class CustomerTest {
         String expectedStatement =
                 "Rental Record for Bob\n" +
                 "\tFrozen\t3.0\n" +
-                "Amount owed is3.0\n" +
-                "You earned  1 frequent renter points";
+                "Amount owed is 3.0\n" +
+                "You earned 1 frequent renter points";
 
         assertEquals(expectedStatement, customer.statement());
     }
@@ -65,8 +65,8 @@ class CustomerTest {
                 "\tInterstellar\t6.5\n" +
                 "\tInception\t3.0\n" +
                 "\tToy Story\t1.5\n" +
-                "Amount owed is11.0\n" +
-                "You earned  3 frequent renter points";
+                "Amount owed is 11.0\n" +
+                "You earned 3 frequent renter points";
 
         assertEquals(expectedStatement, customer.statement());
     }
@@ -77,8 +77,8 @@ class CustomerTest {
 
         String expectedStatement =
                 "Rental Record for David\n" +
-                "Amount owed is0.0\n" +
-                "You earned  0 frequent renter points";
+                "Amount owed is 0.0\n" +
+                "You earned 0 frequent renter points";
 
         assertEquals(expectedStatement, customer.statement());
     }
@@ -93,8 +93,8 @@ class CustomerTest {
         String expectedStatement =
                 "Rental Record for Eve\n" +
                 "\tTitanic\t2.0\n" +
-                "Amount owed is2.0\n" +
-                "You earned  1 frequent renter points";
+                "Amount owed is 2.0\n" +
+                "You earned 1 frequent renter points";
 
         assertEquals(expectedStatement, customer.statement());
     }
@@ -109,8 +109,8 @@ class CustomerTest {
         String expectedStatement =
                 "Rental Record for Frank\n" +
                 "\tTitanic\t5.0\n" +
-                "Amount owed is5.0\n" +
-                "You earned  1 frequent renter points";
+                "Amount owed is 5.0\n" +
+                "You earned 1 frequent renter points";
 
         assertEquals(expectedStatement, customer.statement());
     }
@@ -125,8 +125,8 @@ class CustomerTest {
         String expectedStatement =
                 "Rental Record for Grace\n" +
                 "\tUnknown\t0.0\n" +
-                "Amount owed is0.0\n" +
-                "You earned  1 frequent renter points";
+                "Amount owed is 0.0\n" +
+                "You earned 1 frequent renter points";
 
         assertEquals(expectedStatement, customer.statement());
     }
@@ -141,8 +141,8 @@ class CustomerTest {
         String expectedStatement =
                 "Rental Record for Hannah\n" +
                 "\tTitanic\t2.0\n" +
-                "Amount owed is2.0\n" +
-                "You earned  1 frequent renter points";
+                "Amount owed is 2.0\n" +
+                "You earned 1 frequent renter points";
 
         assertEquals(expectedStatement, customer.statement());
     }
@@ -157,8 +157,8 @@ class CustomerTest {
         String expectedStatement =
                 "Rental Record for Ian\n" +
                 "\tAvengers\t3.0\n" +
-                "Amount owed is3.0\n" +
-                "You earned  1 frequent renter points";
+                "Amount owed is 3.0\n" +
+                "You earned 1 frequent renter points";
 
         assertEquals(expectedStatement, customer.statement());
     }
