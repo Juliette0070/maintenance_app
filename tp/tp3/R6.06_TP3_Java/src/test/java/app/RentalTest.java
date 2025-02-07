@@ -23,4 +23,9 @@ class RentalTest {
     void testGetMovie() {
         assertEquals(movie, rental.getMovie(), "Le film récupéré devrait être celui initialisé");
     }
+
+    @Test
+    void testGetCharge() {
+        assertEquals(15.0, rental.getCharge(), "Le montant de la location devrait être de 15.0");
+    }
 }

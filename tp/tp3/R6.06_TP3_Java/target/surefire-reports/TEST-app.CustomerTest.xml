@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.1" name="app.CustomerTest" time="0.056" tests="10" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.1" name="app.CustomerTest" time="0.062" tests="10" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -12,14 +12,14 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="FR"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-21-openjdk-amd64/lib"/>
-    <property name="sun.java.command" value="/home/iut45/Etudiants/o22202319/Documents/maintenance_app/tp/tp3/R6.06_TP3_Java/target/surefire/surefirebooter-20250205151140248_3.jar /home/iut45/Etudiants/o22202319/Documents/maintenance_app/tp/tp3/R6.06_TP3_Java/target/surefire 2025-02-05T15-11-40_142-jvmRun1 surefire-20250205151140248_1tmp surefire_0-20250205151140248_2tmp"/>
+    <property name="sun.java.command" value="/home/iut45/Etudiants/o22202319/Documents/maintenance_app/tp/tp3/R6.06_TP3_Java/target/surefire/surefirebooter-20250207112056659_3.jar /home/iut45/Etudiants/o22202319/Documents/maintenance_app/tp/tp3/R6.06_TP3_Java/target/surefire 2025-02-07T11-20-56_110-jvmRun1 surefire-20250207112056659_1tmp surefire_0-20250207112056659_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/home/iut45/Etudiants/o22202319/Documents/maintenance_app/tp/tp3/R6.06_TP3_Java/target/test-classes:/home/iut45/Etudiants/o22202319/Documents/maintenance_app/tp/tp3/R6.06_TP3_Java/target/classes:/home/iut45/Etudiants/o22202319/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.8.1/junit-jupiter-api-5.8.1.jar:/home/iut45/Etudiants/o22202319/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/home/iut45/Etudiants/o22202319/.m2/repository/org/junit/platform/junit-platform-commons/1.8.1/junit-platform-commons-1.8.1.jar:/home/iut45/Etudiants/o22202319/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/home/iut45/Etudiants/o22202319/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.8.1/junit-jupiter-engine-5.8.1.jar:/home/iut45/Etudiants/o22202319/.m2/repository/org/junit/platform/junit-platform-engine/1.8.1/junit-platform-engine-1.8.1.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="/home/iut45/Etudiants/o22202319"/>
     <property name="user.language" value="fr"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
-    <property name="java.version.date" value="2024-10-15"/>
+    <property name="java.version.date" value="2025-01-21"/>
     <property name="java.home" value="/usr/lib/jvm/java-21-openjdk-amd64"/>
     <property name="file.separator" value="/"/>
     <property name="basedir" value="/home/iut45/Etudiants/o22202319/Documents/maintenance_app/tp/tp3/R6.06_TP3_Java"/>
@@ -27,9 +27,9 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
-    <property name="surefire.real.class.path" value="/home/iut45/Etudiants/o22202319/Documents/maintenance_app/tp/tp3/R6.06_TP3_Java/target/surefire/surefirebooter-20250205151140248_3.jar"/>
+    <property name="surefire.real.class.path" value="/home/iut45/Etudiants/o22202319/Documents/maintenance_app/tp/tp3/R6.06_TP3_Java/target/surefire/surefirebooter-20250207112056659_3.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
-    <property name="java.runtime.version" value="21.0.5+11-Ubuntu-1ubuntu124.04"/>
+    <property name="java.runtime.version" value="21.0.6+7-Ubuntu-124.04.1"/>
     <property name="user.name" value="o22202319"/>
     <property name="stdout.encoding" value="UTF-8"/>
     <property name="path.separator" value=":"/>
@@ -40,7 +40,7 @@
     <property name="localRepository" value="/home/iut45/Etudiants/o22202319/.m2/repository"/>
     <property name="java.vendor.url.bug" value="https://bugs.launchpad.net/ubuntu/+source/openjdk-21"/>
     <property name="java.io.tmpdir" value="/tmp"/>
-    <property name="java.version" value="21.0.5"/>
+    <property name="java.version" value="21.0.6"/>
     <property name="user.dir" value="/home/iut45/Etudiants/o22202319/Documents/maintenance_app/tp/tp3/R6.06_TP3_Java"/>
     <property name="os.arch" value="amd64"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
@@ -49,18 +49,18 @@
     <property name="java.vm.info" value="mixed mode, sharing"/>
     <property name="stderr.encoding" value="UTF-8"/>
     <property name="java.vendor" value="Ubuntu"/>
-    <property name="java.vm.version" value="21.0.5+11-Ubuntu-1ubuntu124.04"/>
+    <property name="java.vm.version" value="21.0.6+7-Ubuntu-124.04.1"/>
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="65.0"/>
   </properties>
-  <testcase name="testStatementNoMovies" classname="app.CustomerTest" time="0.024"/>
-  <testcase name="testStatementRegularMovieOverTwoDaysRented" classname="app.CustomerTest" time="0.005"/>
-  <testcase name="testStatementNewReleaseMovie" classname="app.CustomerTest" time="0.001"/>
+  <testcase name="testStatementNoMovies" classname="app.CustomerTest" time="0.026"/>
+  <testcase name="testStatementRegularMovieOverTwoDaysRented" classname="app.CustomerTest" time="0.003"/>
+  <testcase name="testStatementNewReleaseMovie" classname="app.CustomerTest" time="0.002"/>
   <testcase name="testStatementNegativeDaysRented" classname="app.CustomerTest" time="0.001"/>
   <testcase name="testStatementRegularMovie" classname="app.CustomerTest" time="0.001"/>
   <testcase name="testStatementNewReleaseOneDay" classname="app.CustomerTest" time="0.001"/>
   <testcase name="testStatementMultipleMovies" classname="app.CustomerTest" time="0.001"/>
-  <testcase name="testStatementZeroDaysRented" classname="app.CustomerTest" time="0.0"/>
+  <testcase name="testStatementZeroDaysRented" classname="app.CustomerTest" time="0.001"/>
   <testcase name="testStatementInvalidPriceCode" classname="app.CustomerTest" time="0.001"/>
   <testcase name="testStatementChildrenMovie" classname="app.CustomerTest" time="0.001"/>
 </testsuite>
