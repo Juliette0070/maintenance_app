@@ -2,6 +2,7 @@ package app;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class CustomerTest {
 
@@ -116,16 +117,23 @@ class CustomerTest {
     }
 
     @Test
-    void testStatementInvalidPriceCode() {
+    void testMovieInvalidPriceCodeThrowsException() {
+        assertThrows(IllegalArgumentException.class, () -> {
+            new Movie("Test Movie", -1);
+        });
+    }
+
+    @Test
+    void testStatementWithValidMovie() {
         Customer customer = new Customer("Grace");
-        Movie invalidMovie = new Movie("Unknown", -1);
-        Rental rental = new Rental(invalidMovie, 3);
+        Movie validMovie = new Movie("Regular Movie", Movie.REGULAR);
+        Rental rental = new Rental(validMovie, 3);
         customer.addRental(rental);
 
         String expectedStatement =
                 "Rental Record for Grace\n" +
-                "\tUnknown\t0.0\n" +
-                "Amount owed is 0.0\n" +
+                "\tRegular Movie\t3.5\n" +
+                "Amount owed is 3.5\n" +
                 "You earned 1 frequent renter points";
 
         assertEquals(expectedStatement, customer.statement());
@@ -161,5 +169,32 @@ class CustomerTest {
                 "You earned 1 frequent renter points";
 
         assertEquals(expectedStatement, customer.statement());
+    }
+
+    @Test
+    void testInvalidPriceCodeThrowsException() {
+        assertThrows(IllegalArgumentException.class, () -> new Movie("Invalid", -1));
+    }
+
+    @Test
+    void testPriceSubclasses() {
+        Price regularPrice = new RegularPrice();
+        Price newReleasePrice = new NewReleasePrice();
+        Price childrenPrice = new ChildrenPrice();
+
+        assertEquals(2.0, regularPrice.getCharge(1));
+        assertEquals(3.0, newReleasePrice.getCharge(1));
+        assertEquals(1.5, childrenPrice.getCharge(2));
+    }
+
+    @Test
+    void testFrequentRenterPoints() {
+        Movie regularMovie = new Movie("Titanic", Movie.REGULAR);
+        Movie newReleaseMovie = new Movie("Avengers", Movie.NEW_RELEASE);
+        Movie childrenMovie = new Movie("Frozen", Movie.CHILDRENS);
+
+        assertEquals(1, regularMovie.getFrequentRenterPoints(1));
+        assertEquals(2, newReleaseMovie.getFrequentRenterPoints(2));
+        assertEquals(1, childrenMovie.getFrequentRenterPoints(5));
     }
 }

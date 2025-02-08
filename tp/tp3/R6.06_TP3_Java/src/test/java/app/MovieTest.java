@@ -27,4 +27,17 @@ class MovieTest {
         movie.setPriceCode(Movie.NEW_RELEASE);
         assertEquals(Movie.NEW_RELEASE, movie.getPriceCode(), "Le code tarifaire devrait être mis à jour en NEW_RELEASE");
     }
+    
+    @Test
+    void testMovieGetPriceCode() {
+        Movie regularMovie = new Movie("Titanic", Movie.REGULAR);
+        Movie newReleaseMovie = new Movie("Avengers", Movie.NEW_RELEASE);
+        Movie childrenMovie = new Movie("Frozen", Movie.CHILDRENS);
+    
+        assertEquals(Movie.REGULAR, regularMovie.getPriceCode());
+        assertEquals(Movie.NEW_RELEASE, newReleaseMovie.getPriceCode());
+        assertEquals(Movie.CHILDRENS, childrenMovie.getPriceCode());
+    }
+
+    
 }

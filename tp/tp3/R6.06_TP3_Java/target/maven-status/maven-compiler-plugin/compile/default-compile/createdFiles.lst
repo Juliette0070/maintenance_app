@@ -1,3 +1,7 @@
 app\Rental.class
-app\Customer.class
+app\ChildrenPrice.class
 app\Movie.class
+app\NewReleasePrice.class
+app\RegularPrice.class
+app\Price.class
+app\Customer.class

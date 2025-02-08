@@ -6,49 +6,46 @@ public class Movie {
   public static final int NEW_RELEASE = 1;
   
   private String title;
-  private int priceCode;
+  private Price price;
   
 <span class="fc" id="L11">  public Movie(String title, int priceCode)  {</span>
 <span class="fc" id="L12">    this.title = title;</span>
-<span class="fc" id="L13">    this.priceCode= priceCode;</span>
+<span class="fc" id="L13">    setPriceCode(priceCode);</span>
 <span class="fc" id="L14">  }</span>
   
   public int getPriceCode() {
-<span class="fc" id="L17">    return priceCode;</span>
+<span class="fc bfc" id="L17" title="All 2 branches covered.">    if (price instanceof RegularPrice) return REGULAR;</span>
+<span class="fc bfc" id="L18" title="All 2 branches covered.">    if (price instanceof NewReleasePrice) return NEW_RELEASE;</span>
+<span class="pc bpc" id="L19" title="1 of 2 branches missed.">    if (price instanceof ChildrenPrice) return CHILDRENS;</span>
+<span class="nc" id="L20">    throw new IllegalStateException(&quot;Unknown price type&quot;);</span>
   }
-  
-  public void setPriceCode(int arg) {
-<span class="fc" id="L21">    priceCode = arg;</span>
-<span class="fc" id="L22">  }</span>
+    
+  public void setPriceCode(int priceCode) {
+<span class="fc bfc" id="L24" title="All 4 branches covered.">    switch (priceCode) {</span>
+        case REGULAR:
+<span class="fc" id="L26">            price = new RegularPrice();</span>
+<span class="fc" id="L27">            break;</span>
+        case NEW_RELEASE:
+<span class="fc" id="L29">            price = new NewReleasePrice();</span>
+<span class="fc" id="L30">            break;</span>
+        case CHILDRENS:
+<span class="fc" id="L32">            price = new ChildrenPrice();</span>
+<span class="fc" id="L33">            break;</span>
+        default:
+<span class="fc" id="L35">            throw new IllegalArgumentException(&quot;Invalid price code&quot;);</span>
+    }
+<span class="fc" id="L37">  }</span>
   
   public String getTitle() {
-<span class="fc" id="L25">    return title;</span>
+<span class="fc" id="L40">    return title;</span>
   }
 
   public double getCharge(int daysRented) {
-<span class="fc" id="L29">    double result = 0;</span>
-<span class="fc bfc" id="L30" title="All 4 branches covered.">    switch (priceCode) {</span>
-      case REGULAR:
-<span class="fc" id="L32">        result += 2;</span>
-<span class="fc bfc" id="L33" title="All 2 branches covered.">        if (daysRented &gt; 2)</span>
-<span class="fc" id="L34">          result += (daysRented - 2) * 1.5;</span>
-        break;
-      case NEW_RELEASE:
-<span class="fc" id="L37">        result = daysRented * 3;</span>
-<span class="fc" id="L38">        break;</span>
-      case CHILDRENS:
-<span class="fc" id="L40">        result += 1.5;</span>
-<span class="fc bfc" id="L41" title="All 2 branches covered.">        if (daysRented &gt; 3)</span>
-<span class="fc" id="L42">          result += (daysRented - 3) * 1.5;</span>
-        break;
-    }
-<span class="fc" id="L45">    return result;</span>
+<span class="fc" id="L44">    return price.getCharge(daysRented);</span>
   }
 
   public int getFrequentRenterPoints(int daysRented) {
-<span class="fc bfc" id="L49" title="All 4 branches covered.">    if ((priceCode == NEW_RELEASE) &amp;&amp; daysRented &gt; 1)</span>
-<span class="fc" id="L50">      return 2;</span>
-<span class="fc" id="L51">    return 1;</span>
+<span class="fc" id="L48">    return price.getFrequentRenterPoints(daysRented);</span>
   }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>
